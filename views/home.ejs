@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyVault</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full h-screen bg-slate-900 text-white flex">
+        <%- include('partials/sidebar') %>
+        <div class="main-section w-[84%] h-full flex flex-col">
+            <%- include('partials/navbar') %>
+            <div class="storage p-10 w-full h-[90%] bg-white rounded-lg text-black">
+                <h1 class="text-5xl tracking-tighter">Welcome to SkyVault</h1>
+                <form action="" class="mt-8 flex items-center gap-2">
+                    <input type="file" name="file" id="file" class="bg-slate-900 text-white px-4 py-4 rounded-lg file:bg-slate-700 file:text-white file:rounded-md file:outline-none file:border-none file:px-4 file:py-2">
+                    <button type="submit" class="bg-slate-800 hover:bg-slate-700 text-white px-10 py-6 rounded-lg">Upload</button>
+                </form>
+                <script src="/javascripts/scripts.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

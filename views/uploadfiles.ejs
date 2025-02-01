@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyVault</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full h-screen bg-slate-900 text-white flex">
+        <%- include('partials/sidebar') %>
+        <div class="main-section w-[84%] h-full flex flex-col">
+            <%- include('partials/navbar') %>
+            <div class="storage p-10 w-full h-[90%] bg-white rounded-lg text-black">
+                <h1 class="text-5xl tracking-tighter">Upload Files</h1>
+                <form action="/skyvault/upload" method="post" class="mt-8 flex flex-col items-start gap-2" enctype="multipart/form-data">
+                    <input type="file" name="file" id="file" class="bg-slate-900 text-white px-4 py-4 rounded-lg file:bg-slate-700 file:text-white file:rounded-md file:outline-none file:border-none file:px-4 file:py-2">
+
+                    <div id="dropZone" class="w-[70%] h-72 border-2 border-dashed border-slate-700 rounded-lg flex items-center justify-center cursor-pointer hover:border-slate-500 transition-colors">
+                        <div class="text-center">
+                            <p class="text-slate-600">Drag & Drop files here</p>
+                            <p class="text-sm text-slate-500">or click to select files</p>
+                        </div>
+                    </div>
+
+                    
+                    <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg ml-2" onclick="uploadedSuccessfully()">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/upload.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+</body>
+</html>

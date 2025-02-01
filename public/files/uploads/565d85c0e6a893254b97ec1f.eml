@@ -1,0 +1,306 @@
+Delivered-To: manyakhede5@gmail.com
+Received: by 2002:a05:612c:2c18:b0:4ab:c11:9102 with SMTP id ir24csp1983984vqb;
+        Sun, 1 Dec 2024 06:15:30 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFFMU17qVaNJqa4cmfRyTISmJVCS3aLrHQDvCkCQ0C0kGJxChmfyEchSpWQUzU3YtFSS/tT
+X-Received: by 2002:a05:620a:1789:b0:7a9:b856:434 with SMTP id af79cd13be357-7b67c256a60mr2274267985a.12.1733062529908;
+        Sun, 01 Dec 2024 06:15:29 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733062529; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Y1su7Ivxaisl+POoRA3li7gIfbDIdm7tPNOy/AgTOleApXufgHRx7w3zEJ32Z4JeMC
+         5Mk2cjtsX7dNur/pnqNSsXlCJYUnR8egJqcTqykj8m7iy1YpupXZXb3YnvX8pVWiAx5m
+         SuhtEE8hUIvlKsKbq1rgUm3YIJ5Wlm9QVTKCNeJU2qzcEUEnY6VAdwL+Hw5C5pbiPjBL
+         +d9Gl101WwTM641mx3EIAxGrTE8mTnI01/XgcYLpEuUhh+phiZNgZia6ZZFZv+CKYcOz
+         EMDFZMVNh8VcDsTL0kS9On5yYXej2mpm7UsfxI9mBcpy3F7BcKvVnfgU02ARe9Pkq5Ef
+         SxeA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:to:from
+         :dkim-signature:dkim-signature;
+        bh=Nmex6AbpKD7twuKr6KYSEeVuyK8eqN1uihQs8WyEuh4=;
+        fh=qOPPbHMbmtD220R4Q+wqbTAvR+MnEABAY9dph+t2jBk=;
+        b=LkrKoiv86vLEztjLB1W19AYBcuoKTIUNI1IpQi6uqr42quOFb+mfjDW8zEzSgr32cQ
+         SNt/D/3Xl4GezxBouzCj0g+5VwHBE1OIdy4RInWklDlMLjv0peJ0+Vt3sTQpRnb8+SMk
+         D8bSa05rapHW9Zft3MEZE4qicheeyEASsipcfYYXZXA3S58THc5TLRkq9QiKnyQdFoN5
+         576s4eNiWd2LdbkHeGNOBC2177TIWg4CaG4ZIxltHowqHwmXf1mt3Uz+3lp+tFu26ccU
+         /KWV0zwZls2UD75KHNvEXtyJdsaLIQAaPoraVSz3dL6C9vmoHXvMO4o88WhwjGtlzyk7
+         xfbg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazon.com header.s=nsntusizjt45u2xa6uj7khzeerjbwqtn header.b=DLhQ0k4g;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=gemrQbyw;
+       spf=pass (google.com: domain of 01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com designates 54.240.48.51 as permitted sender) smtp.mailfrom=01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.com
+Return-Path: <01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com>
+Received: from a48-51.smtp-out.amazonses.com (a48-51.smtp-out.amazonses.com. [54.240.48.51])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6d894de722bsi42170686d6.511.2024.12.01.06.15.29
+        for <manyakhede5@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 01 Dec 2024 06:15:29 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com designates 54.240.48.51 as permitted sender) client-ip=54.240.48.51;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazon.com header.s=nsntusizjt45u2xa6uj7khzeerjbwqtn header.b=DLhQ0k4g;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=gemrQbyw;
+       spf=pass (google.com: domain of 01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com designates 54.240.48.51 as permitted sender) smtp.mailfrom=01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=nsntusizjt45u2xa6uj7khzeerjbwqtn; d=amazon.com; t=1733062529;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=+fH4F2icSS6qQsOn4wBMy+5imfbI46nneM7zCULe4d0=;
+	b=DLhQ0k4gJoArdAhFs63Lm090+EdD/5leqKNtHlHmtPny+6k3UaSbRY3sORnrrDSG
+	uOvKVo2Ud3ch9iHn6kIgkSIdswHFbU/kEVhGu829303FZR0v/iuDKCT/dV0egNuq/rw
+	NaUmFlJwj8vLYLLTdH8xXouonLaUFHGcfUozE/zM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1733062529;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=+fH4F2icSS6qQsOn4wBMy+5imfbI46nneM7zCULe4d0=;
+	b=gemrQbywNYqRfRbwOYe3HRb6u8tPRfhPfcVu/MxRgJCTyWJAEuuCjSEX1dbb6u5S
+	RJSYaDJxL3Q4BNqCgUYgfvyssY8rBlymPL0dfIY9L+YnNqz1Kw+gByrY33ohxeDOmQv
+	USv8DO9fZ+mB5F9lnbbKCGpx1+q/91l7HQVEwTa0=
+From: Amazon Web Services <no-reply-aws@amazon.com>
+To: manyakhede5@gmail.com
+Subject: RE:[CASE 173306119200605] Phone: Waive off my bill
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3033860_94932900.1733062529496"
+Message-ID: <01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000@email.amazonses.com>
+Date: Sun, 1 Dec 2024 14:15:29 +0000
+Feedback-ID: ::1.us-east-1.huE3KBUlbB3jXEGPu3NtaNXYRdURNu75MKOqRLEVhr4=:AmazonSES
+X-SES-Outgoing: 2024.12.01-54.240.48.51
+
+------=_Part_3033860_94932900.1733062529496
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello there,=20
+
+We appreciate your patience and understanding regarding the Elastic Compute=
+ Cloud and VPC resources. We understand that navigating the specifications =
+can be challenging, and we=E2=80=99re committed to assisting you.
+
+I=E2=80=99d be happy to help you with a one-time exception billing adjustme=
+nt related to Elastic Compute Cloud and VPC resources resources charged. To=
+ proceed, we=E2=80=99ll need to complete a few steps for evaluation.
+
+Firstly, we need to terminate the active resources for Amazon Elastic Compu=
+te Cloud and VPC services. However, after reviewing our records, we can con=
+firm that the resources associated with Amazon Elastic Compute Cloud and VP=
+C have already been terminated on our end.
+
+Secondly, we need to gather the following information. Please be as detaile=
+d as possible; this will help us evaluate your case.
+
+1. What is the root cause of the charges? Include specific resources, servi=
+ces, Regions, and the start and end dates of the issue.
+2. Provide us with a breakdown of the unintended charges for the affected m=
+onths.
+3. Is there a specific reason that is preventing the payment of the charges=
+?
+4. What preventative measures have been put in place to avoid a occurrence =
+of the same issue? Here are some examples:
+5. Do you agree to review the pricing structure for resources that you inte=
+nd to use before launching them?
+
+As part of the evaluation process, we kindly request you to implement a pre=
+ventive measures to avoid similar situations in the future. The Preventive =
+measures created by the resources such as CloudWatch billing alerts and ala=
+rms, Budgets, and CloudTrail helps you manage the resources of your account=
+. =20
+
+For more information on these services and their features, please review th=
+e documentation links below:
+
+For more information regards Cloudwatch, Cloudtrail, and Buckets, please vi=
+sit:=20
+https://aws.amazon.com/cloudtrail/getting-started/
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html
+http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managin=
+g-costs.html
+
+Please, let us know as soon as this step is complete, to proceed with the b=
+illing adjustment. We'll be waiting for your newest correspondence to take =
+action as soon as possible.
+
+We value your feedback. Please share your experience by rating this and oth=
+er correspondences in the AWS Support Center. You can rate a correspondence=
+ by selecting the stars in the top right corner of the correspondence.
+
+Best regards,
+Sherry Valeria  M.
+Amazon Web Services
+  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+  To share your experience or contact us again about this case, please retu=
+rn to the AWS Support Center using the following URL: https://console.aws.a=
+mazon.com/support/home#/case/?displayId=3D173306119200605&language=3Den
+
+  Note, this e-mail was sent from an address that cannot accept incoming e-=
+mails.
+  To respond to this case, please follow the link above to respond from you=
+r AWS Support Center.
+
+  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+  Don=E2=80=99t miss messages from AWS Support when you need help! Update y=
+our contact information:
+  https://console.aws.amazon.com/billing/home#/account
+
+  If you receive an error message when visiting the contact information pag=
+e, visit:
+  https://repost.aws/knowledge-center/iam-billing-access/
+
+  AWS Support:
+  https://repost.aws/knowledge-center/
+
+  AWS Documentation:
+  https://docs.aws.amazon.com/
+
+  AWS Cost Management:
+  https://aws.amazon.com/aws-cost-management/
+
+  AWS Training:
+  http://aws.amazon.com/training/
+
+  AWS Managed Services:
+  https://aws.amazon.com/managed-services/
+
+  Amazon Web Services, Inc. is a subsidiary of Amazon.com, Inc.  Amazon.com=
+ is a registered trademark of Amazon.com.
+This message was produced and distributed by Amazon Web Services, Inc. or i=
+ts affiliates 410 Terry Ave. North, Seattle, WA 98109.
+=C2=A9 [2024], Amazon Web Services, Inc. or its affiliates.  All rights res=
+erved. Read our Privacy Notice.
+
+------=_Part_3033860_94932900.1733062529496
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+  <meta charset=3D"UTF-8">
+    <div>Hello there, <br/><br/>We appreciate your patience and understandi=
+ng regarding the Elastic Compute Cloud and VPC resources. We understand tha=
+t navigating the specifications can be challenging, and we=E2=80=99re commi=
+tted to assisting you.<br/><br/>I=E2=80=99d be happy to help you with a one=
+-time exception billing adjustment related to Elastic Compute Cloud and VPC=
+ resources resources charged. To proceed, we=E2=80=99ll need to complete a =
+few steps for evaluation.<br/><br/>Firstly, we need to terminate the active=
+ resources for Amazon Elastic Compute Cloud and VPC services. However, afte=
+r reviewing our records, we can confirm that the resources associated with =
+Amazon Elastic Compute Cloud and VPC have already been terminated on our en=
+d.<br/><br/>Secondly, we need to gather the following information. Please b=
+e as detailed as possible; this will help us evaluate your case.<br/><br/>1=
+. What is the root cause of the charges? Include specific resources, servic=
+es, Regions, and the start and end dates of the issue.<br/>2. Provide us wi=
+th a breakdown of the unintended charges for the affected months.<br/>3. Is=
+ there a specific reason that is preventing the payment of the charges?<br/=
+>4. What preventative measures have been put in place to avoid a occurrence=
+ of the same issue? Here are some examples:<br/>5. Do you agree to review t=
+he pricing structure for resources that you intend to use before launching =
+them?<br/><br/>As part of the evaluation process, we kindly request you to =
+implement a preventive measures to avoid similar situations in the future. =
+The Preventive measures created by the resources such as CloudWatch billing=
+ alerts and alarms, Budgets, and CloudTrail helps you manage the resources =
+of your account.  <br/><br/>For more information on these services and thei=
+r features, please review the documentation links below:<br/><br/>For more =
+information regards Cloudwatch, Cloudtrail, and Buckets, please visit: <br/=
+>https://aws.amazon.com/cloudtrail/getting-started/<br/>http://docs.aws.ama=
+zon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html<br/>http://docs.aws.a=
+mazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html<br/>=
+<br/>Please, let us know as soon as this step is complete, to proceed with =
+the billing adjustment. We&#39;ll be waiting for your newest correspondence=
+ to take action as soon as possible.<br/><br/>We value your feedback. Pleas=
+e share your experience by rating this and other correspondences in the AWS=
+ Support Center. You can rate a correspondence by selecting the stars in th=
+e top right corner of the correspondence.<br/><br/>Best regards,<br/>Sherry=
+ Valeria  M.<br/>Amazon Web Services</div>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D
+ =20
+  <p>
+    To share your experience or contact us again about this case, please re=
+turn to the AWS Support Center using the following URL: <a href=3D"https://=
+kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Fconsole.aws.amazon.com%2Fsu=
+pport%2Fhome%23%2Fcase%2F%3FdisplayId=3D173306119200605%26language=3Den/1/0=
+1000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000/GkFJPDj02febHhX=
+nSG4YWGoB3E0=3D402">https://console.aws.amazon.com/support/home#/case/?disp=
+layId=3D173306119200605&amp;language=3Den</a>
+  </p>
+  <p>
+    Note, this e-mail was sent from an address that cannot accept incoming =
+e-mails.
+    To respond to this case, please follow the link above to respond from y=
+our AWS Support Center.
+  </p>
+  <p>
+    =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+  </p>
+  <p>
+    Don=E2=80=99t miss messages from AWS Support when you need help! Update=
+ your contact information:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Fcons=
+ole.aws.amazon.com%2Fbilling%2Fhome%23%2Faccount/1/01000193829391d8-8cbcd56=
+e-8d1a-401a-ab83-a71ef053ce45-000000/9qAeOiEvn5vZACa9XbivTfZYIVU=3D402">htt=
+ps://console.aws.amazon.com/billing/home#/account</a>
+  </p>
+  <p>
+    If you receive an error message when visiting the contact information p=
+age, visit:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Frepo=
+st.aws%2Fknowledge-center%2Fiam-billing-access%2F/1/01000193829391d8-8cbcd5=
+6e-8d1a-401a-ab83-a71ef053ce45-000000/CDgxsdpiGZg1swYW3kNGlgOBX2o=3D402">ht=
+tps://repost.aws/knowledge-center/iam-billing-access/</a>
+  </p>
+  <p>
+    AWS Support:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Frepo=
+st.aws%2Fknowledge-center%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71=
+ef053ce45-000000/uMTGeYUtFgb77ZlteK9TMLZZ6uU=3D402">https://repost.aws/know=
+ledge-center/</a>
+  </p>
+  <p>
+    AWS Documentation:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Fdocs=
+.aws.amazon.com%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-=
+000000/XepATuBE2CPMImIpyB-YSKnoDII=3D402">https://docs.aws.amazon.com/</a>
+  </p>
+  <p>
+    AWS Cost Management:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Faws.=
+amazon.com%2Faws-cost-management%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-a=
+b83-a71ef053ce45-000000/qIYaol3pc2eueQJO3g5eszPhBws=3D402">https://aws.amaz=
+on.com/aws-cost-management/</a>
+  </p>
+  <p>
+    AWS Training:<br/>
+    <a href=3D"http://kqhwb7ft.r.us-east-1.awstrack.me/L0/http:%2F%2Faws.am=
+azon.com%2Ftraining%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053c=
+e45-000000/GfpeVSFhP1h2GNufNNfVwdysM2E=3D402">http://aws.amazon.com/trainin=
+g/</a>
+  </p>
+  <p>
+    AWS Managed Services:<br/>
+    <a href=3D"https://kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Faws.=
+amazon.com%2Fmanaged-services%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-ab83=
+-a71ef053ce45-000000/hUGhvZpOKm22Gcb6Mg2FTLfhgdo=3D402">https://aws.amazon.=
+com/managed-services/</a>
+  <p><p>Amazon Web Services, Inc. is a subsidiary of Amazon.com, Inc.  Amaz=
+on.com is a registered trademark of Amazon.com.</p><p>This message was prod=
+uced and distributed by Amazon Web Services, Inc. or its <a href=3D"https:/=
+/kqhwb7ft.r.us-east-1.awstrack.me/L0/https:%2F%2Faws.amazon.com%2Flegal%2Fm=
+arketingentities%2F/1/01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45=
+-000000/sSvx96AMzXKsk4DrMwbmjHPZI1s=3D402">affiliates</a> 410 Terry Ave. No=
+rth, Seattle, WA 98109.</p><p>=C2=A9 [2024], Amazon Web Services, Inc. or i=
+ts affiliates.  All rights reserved.  Read our <a href=3D "https://kqhwb7ft=
+.r.us-east-1.awstrack.me/L0/https:%2F%2Faws.amazon.com%2Fprivacy%2F/1/01000=
+193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef053ce45-000000/wS6g7M7CImcart1q9zL=
+1iE-lEq4=3D402">Privacy Notice.</a></p><img alt=3D"" src=3D"https://kqhwb7f=
+t.r.us-east-1.awstrack.me/I0/01000193829391d8-8cbcd56e-8d1a-401a-ab83-a71ef=
+053ce45-000000/XbHfpoQhj1q6gT76y_ZpNZd6j5A=3D402" style=3D"display: none; w=
+idth: 1px; height: 1px;">
+
+------=_Part_3033860_94932900.1733062529496--
